@@ -6,7 +6,7 @@
  * Time: 18:20
  */
 
-use \backend\components\modelhistory\helpers\ModelHistoryHelper;
+use saif\arh\helpers\ModelHistoryHelper;
 
 ?>
 <style>

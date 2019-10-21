@@ -4,13 +4,13 @@
  * @author Mikhail Mikhalev
  */
 
-namespace backend\components\modelhistory\managers;
+namespace saif\arh\managers;
 
 use Yii;
 use yii\db\Connection;
 use yii\db\Query;
 use yii\di\Instance;
-
+use saif\arh\models\ArModelhistorytable;
 
 /**
  * Class DBManager for save history in DB
@@ -52,6 +52,11 @@ class DBManager extends BaseManager
                     'table'=>$obj_table,
                     'class' => get_class($this->object)]
                 )->execute();
+            
+            if($res){
+                ArModelhistorytable::addTableCache();  
+            } 
+
             $modeltable = (new Query())->select(['id', 'class'])->from($this::$defaultTableTableName)->where(['table'=>$obj_table])->one();
         }
 

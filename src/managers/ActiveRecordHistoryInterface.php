@@ -4,7 +4,7 @@
  * @author Mikhail Mikhalev
  */
 
-namespace backend\components\modelhistory\managers;
+namespace saif\arh\managers;
 
 interface ActiveRecordHistoryInterface
 {

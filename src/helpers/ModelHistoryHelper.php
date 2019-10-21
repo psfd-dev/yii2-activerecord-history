@@ -6,14 +6,14 @@
  * Time: 12:09
  */
 
-namespace backend\components\modelhistory\helpers;
+namespace saif\arh\helpers;
 
 
 use yii\db\ActiveRecord;
-use backend\models\ar\ArUsers as User;
-use backend\components\modelhistory\interfaces\ModelHistoryInterface;
 use yii\base\Exception;
 use yii\helpers\Inflector;
+
+use saif\arh\ModelHistoryInterface;
 
 class ModelHistoryHelper
 {
@@ -32,21 +32,6 @@ class ModelHistoryHelper
             return $model->formatValue($data['field_name'], $value);
         } else {
             throw new Exception('Please implement ' . ModelHistoryInterface::class . ' on ' . get_class($object));
-        }
-    }
-
-    public static function getAuthor($data)
-    {
-        if (isset($data['user_id']) && !empty($data['user_id'])) {
-            $model = User::findOne($data['user_id']);
-            if ($model) {
-                if ($model instanceof ModelHistoryInterface) {
-                    /** @var ActiveRecord $model */
-                    return $model->formatValue($data['field_name'], $data['user_id']);
-                } else {
-                    throw new Exception('Please implement ' . ModelHistoryInterface::class . ' on ' . get_class($model));
-                }
-            }
         }
     }
 

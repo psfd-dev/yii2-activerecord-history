@@ -1,6 +1,6 @@
 <?php
 
-namespace backend\components\modelhistory\models;
+namespace saif\arh\models;
 
 use Yii;
 
@@ -84,52 +84,5 @@ class ArModelhistory extends \yii\db\ActiveRecord
     {
         return $this->andWhere(['field_id' => $value]);
     }
-    /*
-    берем данные только по статусам, которые были созданы в этот период.
-    Т.е. изначально new_value = 0
-    */
-    public static function getVpRequestIdStatusNew($period)
-    {
-        $model = self::find()->select(['field_id'])
-        ->andWhere(['between', 'date', $period[0], $period[1]])
-        ->andWhere(['table' => 5])
-        ->andWhere(['field_name' => 'status'])
-        ->andWhere(['new_value' => 0])
-        ->groupBy(['field_id'])
-        ->column();
-
-        return $model;
-    }
-
-    public static function getCountVpRequestStatus($vp_request_ids, $status_id, $period)
-    {
-        $model = self::find()
-        ->andWhere(['between', 'date', $period[0], $period[1]])
-        ->andWhere(['table' => 5])
-        ->andWhere(['field_name' => 'status'])
-        ->andWhere(['new_value' => $status_id])
-        ->andWhere(['field_id' => $vp_request_ids])
-        ->groupBy(['field_id'])
-        ->count();
-
-        return $model;
-    }
-
-    public static function getCountVpRequestStatusPeriod($status_id, $period)
-    {
-        $model = self::find()
-        ->andWhere(['between', 'date', $period[0], $period[1]])
-        ->andWhere(['table' => 5])
-        ->andWhere(['field_name' => 'status'])
-        ->andWhere(['new_value' => $status_id])
-        ->groupBy(['field_id'])
-        ->count();
-
-        return $model;
-    }
-
-    public function getUsersData()
-    {
-        return $this->hasOne(\backend\models\ar\ArUsers::class, ['user_id' => 'user_id']);
-    }
+    
 }

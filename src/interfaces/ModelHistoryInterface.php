@@ -1,5 +1,5 @@
 <?php
-namespace backend\components\modelhistory\interfaces;
+namespace saif\arh\interfaces;
 
 /**
  * Created by PhpStorm.

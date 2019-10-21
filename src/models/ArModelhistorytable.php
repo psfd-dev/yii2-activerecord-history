@@ -1,6 +1,6 @@
 <?php
 
-namespace backend\components\modelhistory\models;
+namespace saif\arh\models;
 
 use Yii;
 
@@ -16,8 +16,7 @@ use Yii;
  */
 class ArModelhistorytable extends \yii\db\ActiveRecord
 {
-    const TABLE_USER = 2;
-    const TABLE_COMPANY = 8;
+    const TABLE_CACHE_KEY = 'table_cache_key';
     
     /**
      * {@inheritdoc}
@@ -44,4 +43,35 @@ class ArModelhistorytable extends \yii\db\ActiveRecord
     {
         return self::getById($table)->id;
     }
+
+    public static function getKeyTable($tableName)
+    {
+        $cache = new \yii\caching\FileCache;
+
+        $data = $cache->get(static::TABLE_CACHE_KEY);
+
+        if ($data === false) {
+            $data = self::addTableCache();        
+        }
+
+        return json_decode($data)[$tableName];
+    }
+
+    public static function getTableData()
+    {
+        $models = self::find()->all();
+        $result = \yii\helpers\ArrayHelper::map($models, 'table', 'id');
+        $data = json_encode($result);
+        return $data;
+    }
+
+    public static function addTableCache()
+    {
+        $cache = new \yii\caching\FileCache;
+        $data = self::getTableData();
+        $cache->set(static::TABLE_CACHE_KEY, $data);
+        return $data;
+    }
+
+
 }

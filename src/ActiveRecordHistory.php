@@ -4,9 +4,9 @@
  * @author Mikhail Mikhalev
  */
 
-namespace backend\components\modelhistory;
+namespace saif\arh;
 
-use backend\components\modelhistory\managers\BaseManager;
+use saif\arh\managers\BaseManager;
 use Yii;
 
 /**
@@ -20,7 +20,7 @@ class ActiveRecordHistory extends \yii\db\ActiveRecord
     /**
      * @var BaseManager
      */
-    protected $_historyManager = 'backend\components\modelhistory\managers\DBManager';
+    protected $_historyManager = 'saif\arh\managers\DBManager';
 
     /**
      * @var array

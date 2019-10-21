@@ -6,7 +6,7 @@
  * Time: 18:20
  */
 
-namespace backend\components\modelhistory;
+namespace saif\arh;
 
 
 use yii\base\Widget;

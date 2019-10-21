@@ -6,9 +6,9 @@
  * Time: 16:51
  */
 
-namespace backend\components\modelhistory\models;
+namespace saif\arh\models;
 
-use backend\components\modelhistory\managers\DBManager;
+use saif\arh\managers\DBManager;
 use kartik\daterange\DateRangeBehavior;
 use yii\base\Model;
 use yii\db\Query;
