@@ -13,7 +13,7 @@ use yii\db\ActiveRecord;
 use yii\base\Exception;
 use yii\helpers\Inflector;
 
-use saifutdinovalex\arh\ModelHistoryInterface;
+use saifutdinovalex\arh\interfaces\ModelHistoryInterface;
 
 class ModelHistoryHelper
 {
