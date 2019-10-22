@@ -4,13 +4,13 @@
  * @author Mikhail Mikhalev
  */
 
-namespace saifutdinovalex\arh\managers;
+namespace psfd\arh\managers;
 
 use Yii;
 use yii\db\Connection;
 use yii\db\Query;
 use yii\di\Instance;
-use saifutdinovalex\arh\models\ArModelhistorytable;
+use psfd\arh\models\ArModelhistorytable;
 
 /**
  * Class DBManager for save history in DB

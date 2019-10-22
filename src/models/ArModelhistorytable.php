@@ -1,6 +1,6 @@
 <?php
 
-namespace saifutdinovalex\arh\models;
+namespace psfd\arh\models;
 
 use Yii;
 
