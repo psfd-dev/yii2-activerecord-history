@@ -15,6 +15,24 @@
         "yiisoft/yii2": "*"
     },
     "autoload": {
+        "psr-4": { "saifutdinovalex\\arh\\": "src\\" }
+    },
+    "repositories": [
+        {
+        "type": "package",
+        "package": {
+        "name": "saifutdinovalex/yii2-activerecord-history", //give package name to anything, must be unique
+        "version": "1.0",
+        "source": {
+        "url": "https://github.com/saifutdinovalex/yii2-activerecord-history", //git url
+        "type": "git",
+        }
+        }
+        }],
+        "require" : {
+          "yiisoft/yii2": "*",
+        },
+        "autoload": {
         "psr-4": { "psfd\\arh\\": "src\\" }
+    },
     }
-}
