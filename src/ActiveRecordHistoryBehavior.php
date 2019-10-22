@@ -4,9 +4,9 @@
  * @author Mikhail Mikhalev
  */
 
-namespace psfd\arh;
+namespace saifutdinovalex\arh;
 
-use psfd\arh\managers\BaseManager;
+use saifutdinovalex\arh\managers\BaseManager;
 use yii\base\Event;
 use yii\db\BaseActiveRecord;
 use \yii\base\Behavior;
@@ -19,7 +19,7 @@ class ActiveRecordHistoryBehavior extends Behavior
      * @var BaseManager This is manager for save history in some storage
      * Default value: DBManager.
      */
-    public $manager ='psfd\arh\managers\DBManager';
+    public $manager ='saifutdinovalex\arh\managers\DBManager';
 
     /**
      * @var array This fields don't save in your storage

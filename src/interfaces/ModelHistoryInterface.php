@@ -1,5 +1,5 @@
 <?php
-namespace psfd\arh\interfaces;
+namespace saifutdinovalex\arh\interfaces;
 
 /**
  * Created by PhpStorm.

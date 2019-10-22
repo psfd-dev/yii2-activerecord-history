@@ -6,14 +6,14 @@
  * Time: 12:09
  */
 
-namespace psfd\arh\helpers;
+namespace saifutdinovalex\arh\helpers;
 
 
 use yii\db\ActiveRecord;
 use yii\base\Exception;
 use yii\helpers\Inflector;
 
-use psfd\arh\ModelHistoryInterface;
+use saifutdinovalex\arh\ModelHistoryInterface;
 
 class ModelHistoryHelper
 {

@@ -6,7 +6,7 @@
  * Time: 18:20
  */
 
-namespace psfd\arh;
+namespace saifutdinovalex\arh;
 
 
 use yii\base\Widget;

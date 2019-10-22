@@ -4,7 +4,7 @@
  * @author Mikhail Mikhalev
  */
 
-namespace psfd\arh\managers;
+namespace saifutdinovalex\arh\managers;
 
 interface ActiveRecordHistoryInterface
 {

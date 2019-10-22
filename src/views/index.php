@@ -6,7 +6,7 @@
  * Time: 18:20
  */
 
-use psfd\arh\helpers\ModelHistoryHelper;
+use saifutdinovalex\arh\helpers\ModelHistoryHelper;
 
 ?>
 <style>
