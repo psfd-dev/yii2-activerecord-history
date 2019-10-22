@@ -3,7 +3,7 @@
 namespace psfd\arh\models;
 
 use Yii;
-
+use psfd\arh\helpers\ModelHistoryHelper;
 /**
  * This is the model class for table "modelhistorytable".
  *
@@ -61,7 +61,12 @@ class ArModelhistorytable extends \yii\db\ActiveRecord
     {
         $models = self::find()->all();
         $result = \yii\helpers\ArrayHelper::map($models, 'table', 'id');
-        $data = json_encode($result);
+        $new = [];
+        foreach ($result as $key => $value) 
+        {
+            $new[ModelHistoryHelper::clearTableName($value['table'])] = $value['id'];    
+        }
+        $data = json_encode($new);
         return $data;
     }
 
