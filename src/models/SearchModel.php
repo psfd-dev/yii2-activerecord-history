@@ -6,9 +6,9 @@
  * Time: 16:51
  */
 
-namespace saif\arh\models;
+namespace psfd\arh\models;
 
-use saif\arh\managers\DBManager;
+use psfd\arh\managers\DBManager;
 use kartik\daterange\DateRangeBehavior;
 use yii\base\Model;
 use yii\db\Query;

@@ -6,14 +6,14 @@
  * Time: 12:09
  */
 
-namespace saif\arh\helpers;
+namespace psfd\arh\helpers;
 
 
 use yii\db\ActiveRecord;
 use yii\base\Exception;
 use yii\helpers\Inflector;
 
-use saif\arh\ModelHistoryInterface;
+use psfd\arh\ModelHistoryInterface;
 
 class ModelHistoryHelper
 {

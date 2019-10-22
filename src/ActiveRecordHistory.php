@@ -4,9 +4,9 @@
  * @author Mikhail Mikhalev
  */
 
-namespace saif\arh;
+namespace psfd\arh;
 
-use saif\arh\managers\BaseManager;
+use psfd\arh\managers\BaseManager;
 use Yii;
 
 /**
@@ -20,7 +20,7 @@ class ActiveRecordHistory extends \yii\db\ActiveRecord
     /**
      * @var BaseManager
      */
-    protected $_historyManager = 'saif\arh\managers\DBManager';
+    protected $_historyManager = 'psfd\arh\managers\DBManager';
 
     /**
      * @var array

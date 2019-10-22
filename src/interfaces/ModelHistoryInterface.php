@@ -1,5 +1,5 @@
 <?php
-namespace saif\arh\interfaces;
+namespace psfd\arh\interfaces;
 
 /**
  * Created by PhpStorm.

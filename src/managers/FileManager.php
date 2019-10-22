@@ -4,7 +4,7 @@
  * @author Mikhail Mikhalev
  */
 
-namespace saif\arh\managers;
+namespace psfd\arh\managers;
 
 use yii\helpers\FileHelper;
 

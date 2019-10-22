@@ -6,7 +6,7 @@
  * Time: 18:20
  */
 
-namespace saif\arh;
+namespace psfd\arh;
 
 
 use yii\base\Widget;
