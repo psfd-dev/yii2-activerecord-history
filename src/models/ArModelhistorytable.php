@@ -54,7 +54,7 @@ class ArModelhistorytable extends \yii\db\ActiveRecord
             $data = self::addTableCache();        
         }
 
-        return json_decode($data)[$tableName];
+        return json_decode($data)->$tableName;
     }
 
     public static function getTableData()
