@@ -60,9 +60,7 @@ class ArModelhistorytable extends \yii\db\ActiveRecord
         {
             return $data->{$tableName};
         }else{
-            $data = self::getTableData();
-            $data = json_decode($data);
-            return $data->{$tableName};
+            return self::find()->select('id')->where(['like', 'table', $tableName])->scalar();
         }
     }
 
