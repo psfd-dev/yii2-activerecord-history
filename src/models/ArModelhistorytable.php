@@ -53,14 +53,17 @@ class ArModelhistorytable extends \yii\db\ActiveRecord
         if ($data === false) {
             $data = self::addTableCache();        
         }
+
         $data = json_decode($data);
-
-        if ($data && isset($data->$tableName))
+        
+       if ($data && isset($data->{$tableName}))
         {
-            return $data->$tableName;
+            return $data->{$tableName};
+        }else{
+            $data = self::getTableData();
+            $data = json_decode($data);
+            return $data->{$tableName};
         }
-
-        throw new \Exception("Not exist key table in cache", 500);
     }
 
     public static function getTableData()
