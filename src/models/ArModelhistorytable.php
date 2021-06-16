@@ -56,10 +56,9 @@ class ArModelhistorytable extends \yii\db\ActiveRecord
 
         $data = json_decode($data);
         
-       if ($data && isset($data->{$tableName}))
-        {
+        if ($data && isset($data->{$tableName})) {
             return $data->{$tableName};
-        }else{
+        } else {
             return self::find()->select('id')->where(['like', 'table', $tableName])->scalar();
         }
     }
@@ -69,9 +68,9 @@ class ArModelhistorytable extends \yii\db\ActiveRecord
         $models = self::find()->all();
         $result = \yii\helpers\ArrayHelper::map($models, 'table', 'id');
         $new = [];
-        foreach ($result as $key => $value) 
-        {
-            $new[ModelHistoryHelper::clearTableName($value['table'])] = $value['id'];    
+        foreach ($result as $key => $value) {
+            $new_key = ModelHistoryHelper::clearTableName($value['table']);
+            $new[$new_key] = $value['id'];    
         }
         $data = json_encode($new);
         return $data;
