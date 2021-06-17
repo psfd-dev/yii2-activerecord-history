@@ -69,8 +69,10 @@ class ArModelhistorytable extends \yii\db\ActiveRecord
         $result = \yii\helpers\ArrayHelper::map($models, 'table', 'id');
         $new = [];
         foreach ($result as $key => $value) {
-            $new_key = ModelHistoryHelper::clearTableName($value['table']);
-            $new[$new_key] = $value['id'];    
+            if (is_array($value)) {
+                $new_key = ModelHistoryHelper::clearTableName($value['table']);
+                $new[$new_key] = $value['id'];        
+            }
         }
         $data = json_encode($new);
         return $data;
