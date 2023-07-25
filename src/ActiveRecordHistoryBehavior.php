@@ -67,9 +67,9 @@ class ActiveRecordHistoryBehavior extends Behavior
      */
     public function saveHistory($event)
     {
-        if(\Yii::$app instanceof \Yii\console\Application) {
-            return;
-        }
+        // if(\Yii::$app instanceof \Yii\console\Application) {
+        //     return;
+        // }
         $manager = new $this->manager;
         $manager->setOptions($this->managerOptions);
 
