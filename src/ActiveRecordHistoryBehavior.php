@@ -93,6 +93,7 @@ class ActiveRecordHistoryBehavior extends Behavior
                 foreach ($this->ignoreFields as $ignoreField) {
                     unset($changedAttributes[$ignoreField]);
                 }
+                
 
                 $manager->setUpdatedFields($changedAttributes);
                 break;
